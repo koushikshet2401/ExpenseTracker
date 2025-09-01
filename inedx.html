@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: #a59191;
+    }
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    .mySlides {
+      display: block;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev {
+      left: 0;
+      border-radius: 0 3px 3px 0;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @keyframes fade {
+      from { opacity: .4 }
+      to { opacity: 1 }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- WELCOME PAGE -->
+  <section class="welcome">
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="set1">
+          <img src="imgs/img1Section1.jpg" alt="img1" style="width:100%">
+          <div class="text">Helps you to track your expenses</div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="set2">
+          <img src="imgs/img2sec2.jpg" alt="img2" style="width:100%">
+          <div class="text">Helps you to track your expenses</div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="set3">
+          <img src="imgs/img3sec3.jpg" alt="img3" style="width:100%">
+          <div class="text">Helps you to track your expenses</div>
+        </div>
+      </div>
+
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <button type="submit">Get Started</button>
+  </section>
+
+</body>
+</html>

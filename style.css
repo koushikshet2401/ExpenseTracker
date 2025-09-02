@@ -142,3 +142,10 @@ button:active {
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
+
+.mySlides img {
+  width: 100%;        /* take full width of container */
+  height: 500px;      /* fixed height */
+  object-fit: cover;  /* crop nicely instead of stretching */
+  border-radius: 15px;
+}

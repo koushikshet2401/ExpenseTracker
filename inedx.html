@@ -3,100 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Finance Tracker</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      background-color: #a59191;
-    }
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
-    }
-    .mySlides {
-      display: block;
-    }
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      user-select: none;
-    }
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-    .prev {
-      left: 0;
-      border-radius: 0 3px 3px 0;
-    }
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-    .text {
-      color: #f2f2f2;
-      font-size: 15px;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center;
-    }
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    .active, .dot:hover {
-      background-color: #717171;
-    }
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    @keyframes fade {
-      from { opacity: .4 }
-      to { opacity: 1 }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- WELCOME PAGE -->
-  <section class="welcome">
+  <!-- WELCOME SCREEN -->
+  <section id="welcome-screen" class="screen">
     <div class="slideshow-container">
-
       <div class="mySlides fade">
-        <div id="imgsec" class="set1">
-          <img src="imgs/img1Section1.jpg" alt="img1" style="width:100%">
-          <div class="text">Helps you to track your expenses</div>
-        </div>
+        <img src="imgs/img1Section1.jpg" alt="img1">
+        <div class="text">Helps you to track your expenses</div>
       </div>
 
       <div class="mySlides fade">
-        <div id="imgsec" class="set2">
-          <img src="imgs/img2sec2.jpg" alt="img2" style="width:100%">
-          <div class="text">Helps you to track your expenses</div>
-        </div>
+        <img src="imgs/img2sec2.jpg" alt="img2">
+        <div class="text">Smart insights on your spending</div>
       </div>
 
       <div class="mySlides fade">
-        <div id="imgsec" class="set3">
-          <img src="imgs/img3sec3.jpg" alt="img3" style="width:100%">
-          <div class="text">Helps you to track your expenses</div>
-        </div>
+        <img src="imgs/img3sec3.jpg" alt="img3">
+        <div class="text">Plan and save better</div>
       </div>
 
       <a class="prev">&#10094;</a>
@@ -109,8 +36,92 @@
       <span class="dot"></span>
     </div>
 
-    <button type="submit">Get Started</button>
+    <button id="get-started">Get Started</button>
   </section>
-<script src="script.js"></script>
+
+  <!-- HOME SCREEN -->
+  <section id="home-screen" class="screen hidden">
+    <header class="top-bar">
+      <button id="back-to-welcome">⬅</button>
+      <h2>Home</h2>
+      <div class="icons">
+        <span class="bell">🔔</span>
+        <span class="settings">⚙️</span>
+      </div>
+    </header>
+
+    <section class="balance">
+      <h1 id="overall-balance"></h1>
+      <div class="cards">
+        <div class="card">
+          <p>Debit Card</p>
+          <h3 id="debit-balance"></h3>
+        </div>
+        <div class="card">
+          <p>Cash</p>
+          <h3 id="cash-balance"></h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity">
+      <h3>Recent Activity</h3>
+      <div id="activity-list">
+        <!-- JS will append activity items here -->
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <a href="#" id="home-btn">🏠</a>
+      <a href="#" id="stats-btn">📊</a>
+      <a href="#">➕</a>
+      <a href="#">👤</a>
+    </nav>
+  </section>
+
+  <!-- STATISTICS SCREEN -->
+  <section id="stats-screen" class="screen hidden">
+    <header class="top-bar">
+      <h2>Statistics</h2>
+      <div class="icons">
+        <span class="bell">🔔</span>
+        <span class="settings">⚙️</span>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active">Weekly</button>
+      <button class="tab">Monthly</button>
+    </div>
+
+    <section class="summary">
+      <h1 id="total-spent"></h1>
+      <p id="percent-change"></p>
+    </section>
+
+    <section class="chart">
+      <div class="bar-container"><div class="bar" id="mon"></div><span>Mon</span></div>
+      <div class="bar-container"><div class="bar" id="tue"></div><span>Tue</span></div>
+      <div class="bar-container"><div class="bar" id="wed"></div><span>Wed</span></div>
+      <div class="bar-container"><div class="bar" id="thu"></div><span>Thu</span></div>
+      <div class="bar-container"><div class="bar" id="fri"></div><span>Fri</span></div>
+      <div class="bar-container"><div class="bar" id="sat"></div><span>Sat</span></div>
+      <div class="bar-container"><div class="bar" id="sun"></div><span>Sun</span></div>
+    </section>
+
+    <section class="categories">
+      <h3>Spending Categories</h3>
+      <div id="categories-list"></div>
+    </section>
+
+    <nav class="bottom-nav">
+      <a href="#" id="home-btn-2">🏠</a>
+      <a href="#" id="stats-btn-2">📊</a>
+      <a href="#">➕</a>
+      <a href="#">👤</a>
+    </nav>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

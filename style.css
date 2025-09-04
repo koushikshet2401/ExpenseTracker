@@ -11,7 +11,7 @@
 
 /* ---------------- WELCOME SCREEN ---------------- */
 body {
-  background: linear-gradient(to right, #a17fe0, #5d26c1);
+  background: linear-gradient(to right, #f0f0f0, #dcd8e1);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -101,7 +101,7 @@ button:hover {
 
 /* ---------------- HOME SCREEN ---------------- */
 #home-screen {
-  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  background: linear-gradient(to right, #cdd2c2, #a8b1a9);
   width: 100%;
   height: 100vh;
   padding: 20px;
@@ -143,7 +143,7 @@ button:hover {
 
 /* ---------------- STATS SCREEN ---------------- */
 #stats-screen {
-  background: linear-gradient(to right, #a1ffce, #faffd1);
+  background: linear-gradient(to right, #d0d4d2, #faffd1);
   width: 100%;
   height: 100vh;
   padding: 20px;
@@ -164,7 +164,7 @@ button:hover {
   margin: 0 5px;
 }
 .tab.active {
-  background: #2ecc71;
+  background: #b5c7bd;
   color: #fff;
 }
 
@@ -183,8 +183,67 @@ button:hover {
 }
 .bar {
   width: 20px;
-  background: #2ecc71;
+  background: #b6d2c2;
   border-radius: 8px;
   height: 0;
   transition: height 0.5s;
+}
+
+
+/* bell and gear */
+/* Container styling */
+.top-right-section {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dropdown common styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background-color: white;
+  color: black;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 10;
+  font-size: 16px;
+}
+
+.dropdown-content p {
+  margin: 8px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.dropdown-content p:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Badge styling */
+.badge {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 14px;
+  vertical-align: top;
+  margin-left: -10px;
 }

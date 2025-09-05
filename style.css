@@ -190,8 +190,7 @@ button:hover {
 }
 
 
-/* bell and gear */
-/* Container styling */
+/* Bell & Gear Dropdowns */
 .top-right-section {
   display: flex;
   gap: 20px;
@@ -199,14 +198,15 @@ button:hover {
   top: 20px;
   right: 20px;
   font-size: 24px;
-  cursor: pointer;
 }
 
-/* Dropdown common styling */
+/* Dropdown container */
 .dropdown {
   position: relative;
+  cursor: pointer; /* bell & gear are clickable */
 }
 
+/* Dropdown content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -218,7 +218,7 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   padding: 10px;
   border-radius: 8px;
-  z-index: 10;
+  z-index: 100;
   font-size: 16px;
 }
 
@@ -226,24 +226,59 @@ button:hover {
   margin: 8px 0;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer; /* dropdown items are clickable */
 }
 
 .dropdown-content p:hover {
   background-color: #f0f0f0;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Badge styling */
-.badge {
+/* Badge styling for notifications */
+.notifications .badge {
   background: red;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 14px;
-  vertical-align: top;
-  margin-left: -10px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  cursor: pointer;
+}
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  cursor: pointer; /* bell & gear are clickable */
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background-color: white;
+  color: black;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 100;
+  font-size: 16px;
+}
+
+.dropdown-content p {
+  margin: 8px 0;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer; /* dropdown items are clickable */
+}
+
+.dropdown-content p:hover {
+  background-color: #f0f0f0;
+}
+
+/* Badge pointer */
+.notifications .badge {
+  cursor: pointer;
 }

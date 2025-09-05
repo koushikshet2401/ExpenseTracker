@@ -105,3 +105,28 @@ document.getElementById("percent-change").innerText = "↑ 12% vs last week";
   let bar = document.getElementById(day);
   bar.style.height = (20 + i*10) + "px"; // sample values
 });
+
+
+document.querySelectorAll(".dropdown").forEach(drop => {
+  const trigger = drop.querySelector("span"); // icon
+  const content = drop.querySelector(".dropdown-content");
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent immediate close
+
+    // Close all other dropdowns
+    document.querySelectorAll(".dropdown-content").forEach(dc => {
+      if (dc !== content) dc.style.display = "none";
+    });
+
+    // Toggle this dropdown
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener("click", () => {
+  document.querySelectorAll(".dropdown-content").forEach(dc => {
+    dc.style.display = "none";
+  });
+});

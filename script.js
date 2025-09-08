@@ -36,6 +36,7 @@ document.querySelectorAll(".dot").forEach((dot, index) => {
 setInterval(() => showSlide(++slideIndex), 5000);
 
 // ---------------- SCREEN NAVIGATION ----------------
+const loginScreen = document.getElementById("login-screen");
 const welcomeScreen = document.getElementById("welcome-screen");
 const homeScreen = document.getElementById("home-screen");
 const statsScreen = document.getElementById("stats-screen");
@@ -52,13 +53,16 @@ const plusIcon = document.getElementById("plusIcon");
 const profileIcon = document.getElementById("profileIcon");
 const closeAdd = document.getElementById("close-add");
 const closeProfile = document.getElementById("close-profile");
+const loginBtn = document.getElementById("logBtn");
 
 function showScreen(screen) {
-  [welcomeScreen, homeScreen, statsScreen, addTransactionScreen, profileScreen].forEach(s => s.classList.add("hidden"));
+  [loginScreen, welcomeScreen, homeScreen, statsScreen, addTransactionScreen, profileScreen]
+    .forEach(s => s.classList.add("hidden"));
   screen.classList.remove("hidden");
 }
 
 // Navigation events
+loginBtn.addEventListener("click", () => showScreen(welcomeScreen))
 getStartedBtn.addEventListener("click", () => showScreen(homeScreen));
 backToWelcome.addEventListener("click", () => showScreen(welcomeScreen));
 
@@ -102,7 +106,9 @@ document.querySelectorAll(".dropdown").forEach(drop => {
 
   trigger.addEventListener("click", (e) => {
     e.stopPropagation();
-    document.querySelectorAll(".dropdown-content").forEach(dc => { if(dc!==content) dc.style.display="none"; });
+    document.querySelectorAll(".dropdown-content").forEach(dc => { 
+      if (dc !== content) dc.style.display="none"; 
+    });
     content.style.display = content.style.display === "block" ? "none" : "block";
   });
 });
